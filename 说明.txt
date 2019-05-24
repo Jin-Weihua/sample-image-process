@@ -1,0 +1,13 @@
+1、环境要求：最好有个Anaconda，然后conda install gdal，注意gdal版本号要对
+2、操作（以我的高分一实验图像为例，全色和多光谱融合）：
+（1）两个图像（全色和高光谱）来源相同（比如都来源于高分一号）
+python RSfusion.py  GF1_PMS1_E113.0_N23.3_20131205_L1A0000126070-PAN1.tiff（全色tif） GF1_PMS1_E113.0_N23.3_20131205_L1A0000126070-MSS1.tiff（多光谱tif） out.tif（输出的融合tif名称，自定义随便叫什么out.tif 什么rs.tif都可以）
+（2）如果融合同源高光谱tif（比如有4个波段，有的有三个波段）
+那和全色tif融合就像这样
+python RSfusion.py  GF1_PMS1_E113.0_N23.3_20131205_L1A0000126070-PAN1.tiff（全色tif） GF1_PMS1_E113.0_N23.3_20131205_L1A0000126070-MSS1.tiff（多光谱tif）, band=4  GF1_PMS1_E113.0_N23.3_20131205_L1A0000126070-MSS1.tiff（多光谱tif）band =3
+ GF1_PMS1_E113.0_N23.3_20131205_L1A0000126070-MSS1.tiff（多光谱tif）, band =2 ,  GF1_PMS1_E113.0_N23.3_20131205_L1A0000126070-MSS1.tiff（多光谱tif） band =1 out.tif（有几个波段就输入几次band=4 band=3 band=2 band=1，也可以融合其中指定的波段，比如融合波段2，3就只输入band =2 band =3）
+（3）如果融合异源影像（一般不会）
+操作为 
+python RSfusion.py  GF1_PMS1_E113.0_N23.3_20131205_L1A0000126070-PAN1.tiff（全色tif） GF2_PMS1_E113.0_N23.3_20131205_L1A0000126070-MSS1.tiff（多光谱tif） out.tif（输出的融合tif名称，自定义随便叫什么out.tif 什么rs.tif都可以）
+
+（4）python文件RSfusion.py要与待融合的两张或多张影像放在同一文件夹下
