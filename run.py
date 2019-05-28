@@ -15,7 +15,8 @@ def main(argv):
         print('ERROR: 参数个数不对！')
         return
     data_path = argv[1]
-    result_folder = argv[2]
+    sensor_num = argv[2]
+    result_folder = argv[3]
     print('影像路径：%s'%(data_path))
     print('结果文件夹：%s'%(result_folder))
     product_id = os.path.basename(data_path).split('_')[5][6:13]
@@ -30,10 +31,10 @@ def main(argv):
         err_message = '解压数据失败！'
         print(err_message)
         return
-    MSS_path = decompression_folder + '/' + os.path.basename(data_path).replace('.tar.gz','-MSS1.tiff')
-    PAN_path = decompression_folder + '/' +os.path.basename(data_path).replace('.tar.gz','-PAN1.tiff')
-    MSS_path_w = decompression_folder + '/' + product_id + '-MSS1.tiff'
-    PAN_path_w = decompression_folder + '/' + product_id + '-PAN1.tiff'
+    MSS_path = decompression_folder + '/' + os.path.basename(data_path).replace('.tar.gz','-MSS{}.tiff'.format(sensor_num))
+    PAN_path = decompression_folder + '/' +os.path.basename(data_path).replace('.tar.gz','-PAN{}.tiff'.format(sensor_num))
+    MSS_path_w = decompression_folder + '/' + product_id + '-MSS{}.tiff'.format(sensor_num)
+    PAN_path_w = decompression_folder + '/' + product_id + '-PAN{}.tiff'.format(sensor_num)
     print('-------------赋投影-------------')
     warp_step = "gdalwarp {} {} -s_srs EPSG:4326 -t_srs EPSG:4326".format(MSS_path, MSS_path_w)
     if subprocess.call(warp_step, shell=True) != 0:
