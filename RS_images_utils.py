@@ -189,6 +189,6 @@ def save_tiff_png(tiff_path,png_path):
     return
 
 if __name__=='__main__':
-    im_path = '/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510.tiff'
-    save_tiff_png(im_path,'/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510.png')
+    im_path = '/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510-3.tiff'
+    save_tiff_png(im_path,'/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510-3.png')
     # block_tiff_imgs(im_path,stander_size=512)

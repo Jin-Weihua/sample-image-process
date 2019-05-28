@@ -284,4 +284,10 @@ def main():
 
 
 if __name__ == '__main__':
+    # import pdb
+    # pdb.set_trace()
+    # ss=['RSfusion.py', '/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510-PAN1.tiff', '/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510-MSS1.tiff,band=1', '/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510-MSS1.tiff,band=2','/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510-MSS1.tiff,band=3','/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510.tiff']
+    # ss=['RSfusion.py', '/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510-PAN1.tiff', '/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510-MSS1.tiff','/Users/jinweihua/Downloads/GF2_PMS1_E121.1_N31.7_20180310_L1A0003052510/3052510.tiff']
+
+    # sys.exit(gdal_pansharpen(ss))
     sys.exit(gdal_pansharpen(sys.argv))
