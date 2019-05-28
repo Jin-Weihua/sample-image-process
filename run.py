@@ -86,7 +86,7 @@ def main(argv):
         print(err_message)
         return
     print('-------------生成自然图像-------------')
-    jpg_folder = '/storage/sample/jpg'
+    jpg_folder = result_folder
     jpg1 = jpg_folder + '/' + product_id + '-1.jpg'
     jpg2 = jpg_folder + '/' + product_id + '-2.jpg'
     jpg3 = jpg_folder + '/' + product_id + '-3.jpg'
